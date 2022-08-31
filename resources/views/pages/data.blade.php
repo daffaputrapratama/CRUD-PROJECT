@@ -33,38 +33,46 @@
 
                     <div class="table-responsive">
                       <table class="table table-striped">
+                      @foreach($datauser as $p)
                         <tr>
                           <th class="text-center pt-2">
                           </th>
                           <th>Nama</th>
                           <th>Kelas</th>
                           <th>NIS</th>
-                          <th>Tanggal Lahir</th>
+                          <th>Date</th>
+
+
                         </tr>
                         <tr>
                           <td>
                           </td>
-                          <td>INI UNTUK NAMA
+                          <td>{{$p->name}}
                             <div class="table-links">
+                            <form action ="/hapususer/{{$p->id}}" method="POST">
+                            @method('delete')
+                            @csrf
+                            
                               <a href="#">View</a>
-                              <div class="bullet"></div>
-                              <a href="#">Edit</a>
-                              <div class="bullet"></div>
-                              <a href="#" class="text-danger">Trash</a>
+                              <div class="bullet"> </div>
+                              <a type="button" href="/ubah/{{$p->id}}">Edit</a>
+                              <div class="bullet"> </div>
+                              <button type="submit" class="btn btn-danger" style="border:none;">Delete</button>     
+                             
+                          </form>
                             </div>
                           </td>
+
+                          <!-- name -->
                           <td>
-                            <a href="#">INI UNTUK KELAS</a>
+                            <a href="#">{{$p->kelas}}</a>
                             
                           </td>
-                          <td>
-                            <a href="#">
-                              <img alt="image" src="../assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="title" title=""> 
-                              <div class="d-inline-block ml-1">INI UNTUK NAMA</div>
-                            </a>
-                          </td>
-                          <td>INI UNTUK TANGGAL LAHIRS</td>
+              
+                          <td>{{$p->nis}}</td>
+                          <td>{{$p->date}}</td>
                         </tr>
+                        @endforeach
                       </table>
                     </div>
                     

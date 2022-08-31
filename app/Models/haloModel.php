@@ -9,7 +9,7 @@ class HaloModel extends Model
 {
     use HasFactory;
     protected $table='halo_models';
-    protected $fillable=['nama','kelas','nis','date'];
+    protected $fillable=['name','kelas','nis','date'];
 
 
     

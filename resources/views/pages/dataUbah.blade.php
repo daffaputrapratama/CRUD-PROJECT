@@ -1,4 +1,12 @@
-<div class="section-body">
+@extends('layouts.main')
+
+@section('titleUbah')
+<h1>Change Profile</h1>
+@endsection
+
+@section('usersetting')
+
+          <div class="section-body">
             <h2 class="section-title">Hi, Ujang!</h2>
             <p class="section-lead">
               Change information about yourself on this page.
@@ -47,38 +55,46 @@
               </div>
               <div class="col-12 col-md-12 col-lg-7">
                 <div class="card">
-                  <form method="post" class="needs-validation" novalidate="">
+                 
+                  <form class="needs-validation" novalidate="" method="POST" action="/ubahdata/{{$datauser->id}}">
+                  @method('put')
+                  @csrf
                     <div class="card-header">
                       <h4>Edit Profile</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
                           <div class="form-group col-md-6 col-12">
-                            <label>First Name</label>
-                            <input type="text" class="form-control" value="Ujang" required="">
+                            <label>Your Name</label>
+                            <input type="text" class="form-control" required="" name="name" value="{{$datauser->name}}">
                             <div class="invalid-feedback">
                               Please fill in the first name
                             </div>
                           </div>
                           <div class="form-group col-md-6 col-12">
-                            <label>Last Name</label>
-                            <input type="text" class="form-control" value="Maman" required="">
-                            <div class="invalid-feedback">
-                              Please fill in the last name
-                            </div>
+                          <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kelas</label>
+                      <div class="col-sm-12 col-md-7">
+                        <select class="form-control selectric" name="kelas">
+                          <option>XI RPL 1</option>
+                          <option>XI RPL 2</option>
+                          <option>DKV 2</option>
+                          <option>DKV 2</option>
+                        </select>
+                      </div>
+                      </div>
                           </div>
                         </div>
                         <div class="row">
-                          <div class="form-group col-md-7 col-12">
-                            <label>Email</label>
-                            <input type="email" class="form-control" value="ujang@maman.com" required="">
+                          <div class="form-group col-md-6 col-12">
+                            <label>NIS</label>
+                            <input type="text" class="form-control" value="{{$datauser->nis}}" required="" name="nis">
                             <div class="invalid-feedback">
                               Please fill in the email
                             </div>
                           </div>
                           <div class="form-group col-md-5 col-12">
-                            <label>Phone</label>
-                            <input type="tel" class="form-control" value="">
+                            <label>Date</label>
+                            <input type="date" class="form-control" name="date">
                           </div>
                         </div>
                         <div class="row">
@@ -108,4 +124,8 @@
             </div>
           </div>
         </section>
+        </div>
       </div>
+
+     
+      @endsection

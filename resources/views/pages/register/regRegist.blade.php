@@ -56,12 +56,12 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="email">Password</label>
-                    <input id="email" type="password" class="form-control" name="password">
-                    <div class="invalid-feedback">
+                      <label for="inputPassword5">Password</label>
+                      <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="password">
+                      <small id="passwordHelpBlock" class="form-text text-muted">
+                        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                      </small>
                     </div>
-                  </div>
-                  
 
                
 
@@ -70,6 +70,9 @@
                       Register
                     </button>
                   </div>
+                  <div class="mt-5 text-center">
+                Already Have an Account?<a href="/registerToLogin"> Create New One!</a>
+              </div>
                 </form>
               </div>
             </div>

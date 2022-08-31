@@ -8,6 +8,7 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel = "icon" href = "../../../public/icon.svg">
 
   <!-- CSS Libraries -->
 
@@ -23,29 +24,34 @@
                 @include('layouts.sidebar')
             </div>
 
+          
             <!-- Main Content -->
             <div class="main-content">
+          
 
         <!-- section -->
             <!-- header -->
-                <section class="section">
+        <section class="section">
                 <div class="section-header">
-                    <h1>Blank Page</h1>
+                    <h1>
+                        @yield('titleUbah')
+                    </h1>
                 </div>
             <!-- header -->
 
+            @yield('usersetting')
+               
             <!-- body -->
                 <div class="section-body">
                     <div class="card">
-                    <div class="main-card">
-                        @yield('form')
-                        @yield('data')
-                        <!-- isi disini -->
-                    </div>
+                        <div class="main-card">
+                            @yield('form')
+                            @yield('data')
+                        </div>
                     </div>
                 </div>
             <!-- body -->    
-                </section>
+        </section>
 <!-- section -->
   </div>
 

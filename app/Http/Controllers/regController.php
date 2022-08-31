@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\HaloModel;
 
 
 class RegController extends Controller
@@ -43,7 +44,14 @@ class RegController extends Controller
         $data=User::all();
         return view('pages.register.regData',['data'=>$data]);
     }
-    // ini fungsi buat return ke table aja
 
+    public function toRegister(){
+        return view("pages.register.regRegist", [
+            "datauser"=>HaloModel::all()
+        ]);
+    }
+
+    // ini fungsi buat return ke table aja
+    
 
 }
